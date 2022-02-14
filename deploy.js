@@ -2,11 +2,12 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
 
+const mnemonicPath = path.resolve(__dirname, 'mnemonic.txt');
+const mnemonic = fs.readFileSync(mnemonicPath, {encoding: 'utf-8'});
+
 const provider = new HDWalletProvider(
   'REPLACE_WITH_YOUR_MNEMONIC',
-  // remember to change this to your own phrase!
-  'https://rinkeby.infura.io/v3/15c1d32581894b88a92d8d9e519e476c'
-  // remember to change this to your own endpoint!
+  'https://rinkeby.infura.io/v3/b2545a4597e748a88cfa0e8fe0e7e399'
 );
 const web3 = new Web3(provider);
 
